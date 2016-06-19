@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace Finance\Events;
 
 abstract class Event
 {

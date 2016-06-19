@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Exceptions;
+namespace Finance\Exceptions;
 
 use Exception;
 use Illuminate\Validation\ValidationException;
