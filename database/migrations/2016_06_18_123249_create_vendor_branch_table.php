@@ -6,13 +6,20 @@ use Illuminate\Database\Migrations\Migration;
 class CreateVendorBranchTable extends Migration
 {
     /**
+     * Table Name
+     *
+     * @var string
+     */
+    protected $table = 'vendor_branches';
+
+    /**
      * Run the migrations.
      *
      * @return void
      */
     public function up()
     {
-        Schema::create('vendor_branches', function (Blueprint $table) {
+        Schema::create($this->table, function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->unsignedInteger('vendor_id');
@@ -29,6 +36,6 @@ class CreateVendorBranchTable extends Migration
      */
     public function down()
     {
-        Schema::drop('vendor_branches');
+        Schema::drop($this->table);
     }
 }

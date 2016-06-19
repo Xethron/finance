@@ -6,13 +6,20 @@ use Illuminate\Database\Migrations\Migration;
 class CreateProductTable extends Migration
 {
     /**
+     * Table Name
+     *
+     * @var string
+     */
+    protected $table = 'products';
+
+    /**
      * Run the migrations.
      *
      * @return void
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create($this->table, function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('variant_id');
             $table->unsignedInteger('brand_id');
@@ -33,6 +40,6 @@ class CreateProductTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop($this->table);
     }
 }
